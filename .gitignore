@@ -1,0 +1,41 @@
+# ======================
+# SPRING BOOT (JAVA)
+# ======================
+target/
+*.log
+*.class
+
+# Eclipse / STS
+.project
+.classpath
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# ======================
+# PYTHON (FLASK / ML)
+# ======================
+venv/
+__pycache__/
+*.pyc
+
+# Model files (optional - keep if needed)
+*.pkl
+
+# ======================
+# VS CODE
+# ======================
+.vscode/
+
+# ======================
+# OS FILES
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# ENV / SECRET
+# ======================
+.env
