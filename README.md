@@ -1,27 +1,27 @@
 # Email Spam Detection System
 
-## 📌 Project Description
+## Project Description
 This project is an Email Spam Detection System that classifies emails as **Spam** or **Ham (Not Spam)** using Machine Learning.
 
-## ⚙️ Tech Stack
+## Tech Stack
 - Java (Spring Boot) – Backend API
 - Python (Flask) – ML Model
 - REST API – Communication between backend and ML
 - Git & GitHub – Version Control
 
-## 🚀 How it Works
+## How it Works
 1. User sends email content
 2. Spring Boot receives request
 3. Backend calls Flask API
 4. ML model analyzes text
 5. Returns result: Spam / Not Spam
 
-## 🌐 Features
+## Features
 - Real-time spam detection
 - API-based architecture
 - Separation of backend and ML logic
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### Backend (Spring Boot)
 - Run the Spring Boot application
@@ -32,10 +32,10 @@ This project is an Email Spam Detection System that classifies emails as **Spam*
 ### API
 - Send POST request with email content
 
-## 📷 Future Improvements
+## Future Improvements
 - Deploy on AWS
 - Improve ML accuracy
 - Add user interface
 
-## 👨‍💻 Author
+## Author
 Tanbir Hussain

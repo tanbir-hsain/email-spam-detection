@@ -7,7 +7,7 @@ app = Flask(__name__)
 model = pickle.load(open("spam_model.pkl", "rb"))
 vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
 
-# 🔹 Same cleaning (VERY IMPORTANT)
+
 def clean_text(text):
     text = text.lower()
     text = re.sub(r'[^a-z0-9 ]', '', text)
@@ -26,7 +26,7 @@ def predict():
         if not email_text:
             return jsonify({"prediction": "ERROR"})
 
-        # 🔥 Apply SAME preprocessing
+ 
         email_text = clean_text(email_text)
 
         vector = vectorizer.transform([email_text])
