@@ -7,7 +7,6 @@ app = Flask(__name__)
 model = pickle.load(open("spam_model.pkl", "rb"))
 vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
 
-
 def clean_text(text):
     text = text.lower()
     text = re.sub(r'[^a-z0-9 ]', '', text)
@@ -26,9 +25,7 @@ def predict():
         if not email_text:
             return jsonify({"prediction": "ERROR"})
 
- 
         email_text = clean_text(email_text)
-
         vector = vectorizer.transform([email_text])
         prediction = model.predict(vector)[0]
 
@@ -40,4 +37,4 @@ def predict():
         return jsonify({"prediction": "ERROR"})
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(host="0.0.0.0", port=5000)   # ✅ IMPORTANT CHANGE
