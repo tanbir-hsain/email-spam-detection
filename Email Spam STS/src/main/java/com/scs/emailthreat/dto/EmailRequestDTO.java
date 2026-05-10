@@ -2,13 +2,13 @@ package com.scs.emailthreat.dto;
 
 public class EmailRequestDTO {
 
-    private String content;
+    private String emailText;
 
-    public String getContent() {
-        return content;
+    public String getEmailText() {
+        return emailText;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setEmailText(String emailText) {
+        this.emailText = emailText;
     }
 }
