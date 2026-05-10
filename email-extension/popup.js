@@ -2,7 +2,7 @@ document.getElementById("checkBtn").addEventListener("click", function () {
 
     let text = document.getElementById("emailText").value;
 
-    fetch("http://13.206.142.50:5000/predict", {
+  fetch("http://13.206.142.50:8080/email/analyze", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
