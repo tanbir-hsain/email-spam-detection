@@ -13,8 +13,6 @@ import java.util.Map;
 @Service
 public class EmailService {
 
-    private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
-
     @Value("${flask.api.url}")
     private String flaskUrl;
 
@@ -40,7 +38,6 @@ public class EmailService {
             return new EmailResponseDTO(result, 1.0);
 
         } catch (Exception e) {
-            logger.error("Flask error: {}", e.getMessage());
             return new EmailResponseDTO("ERROR", 0.0);
         }
     }

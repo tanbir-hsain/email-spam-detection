@@ -33,8 +33,7 @@ def predict():
 
         return jsonify({"prediction": result})
 
-    except Exception as e:
-        print("ERROR:", e)
+    except Exception:
         return jsonify({"prediction": "ERROR"})
 
 if __name__ == "__main__":

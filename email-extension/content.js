@@ -1,4 +1,4 @@
-console.log("Auto Spam Detector Running");
+console.log("GLOBAL Spam Detector Running");
 
 function getEmailText() {
     let emailBody =
@@ -12,7 +12,7 @@ setInterval(() => {
     let text = getEmailText();
     if (!text) return;
 
-    fetch("http://localhost:8080/email/analyze", {
+    fetch("http://3.110.181.26:8080/email/analyze", {   // 🌍 GLOBAL IP
         method: "POST",
         headers: {
             "Content-Type": "application/json"
