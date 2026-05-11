@@ -1,4 +1,4 @@
-console.log("Extension running");
+console.log("Auto Spam Detector Running");
 
 function getEmailText() {
     let emailBody =
@@ -9,50 +9,38 @@ function getEmailText() {
 }
 
 setInterval(() => {
-
     let text = getEmailText();
-
     if (!text) return;
 
-    fetch("http://127.0.0.1:8080/email/analyze", {
-
+    fetch("http://localhost:8080/email/analyze", {
         method: "POST",
-
         headers: {
             "Content-Type": "application/json"
         },
-
         body: JSON.stringify({
             emailText: text
         })
-
     })
-    .then(res => res.text())
+    .then(res => res.json())
     .then(data => {
-
         let box = document.getElementById("spam-box");
 
         if (!box) {
-
             box = document.createElement("div");
-
             box.id = "spam-box";
-
             box.style.position = "fixed";
             box.style.top = "10px";
             box.style.right = "10px";
             box.style.background = "black";
             box.style.color = "white";
-            box.style.padding = "12px";
+            box.style.padding = "10px";
             box.style.borderRadius = "8px";
             box.style.zIndex = "9999";
-
             document.body.appendChild(box);
         }
 
-        box.innerText = "Spam Detection Result: " + data;
-
+        box.innerText = "Spam: " + data.result;
     })
-    .catch(err => console.log("Backend error:", err));
+    .catch(err => console.log("Error:", err));
 
 }, 4000);

@@ -31,11 +31,13 @@ public class EmailService {
             ResponseEntity<Map> response =
                     restTemplate.postForEntity(flaskUrl, entity, Map.class);
 
-            String result = (response.getBody() != null)
-                    ? String.valueOf(response.getBody().get("prediction"))
-                    : "ERROR";
+            String result = "ERROR";
 
-            return new EmailResponseDTO(result, 0.0);
+            if (response.getBody() != null && response.getBody().get("prediction") != null) {
+                result = response.getBody().get("prediction").toString();
+            }
+
+            return new EmailResponseDTO(result, 1.0);
 
         } catch (Exception e) {
             logger.error("Flask error: {}", e.getMessage());
