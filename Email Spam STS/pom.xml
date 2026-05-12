@@ -36,6 +36,10 @@
             <scope>runtime</scope>
         </dependency>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 78a1cd9c68aed3df92231fe19f2ee821f6d87217
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
