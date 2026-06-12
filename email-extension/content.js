@@ -12,7 +12,7 @@ setInterval(() => {
     let text = getEmailText();
     if (!text) return;
 
-    fetch("http://3.110.181.26:8080/email/analyze", {   // 🌍 GLOBAL IP
+    fetch("http://localhost:8080/email/analyze", {   
         method: "POST",
         headers: {
             "Content-Type": "application/json"

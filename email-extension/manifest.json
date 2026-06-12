@@ -4,8 +4,9 @@
   "version": "1.0",
   "permissions": ["activeTab"],
   "host_permissions": [
-    "http://3.110.181.26:8080/*"
+    "http://localhost:8080/*"
   ],
+
   "content_scripts": [
     {
       "matches": ["https://mail.google.com/*"],
@@ -13,4 +14,5 @@
       "run_at": "document_idle"
     }
   ]
+
 }

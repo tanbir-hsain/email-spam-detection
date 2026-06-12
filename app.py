@@ -14,27 +14,25 @@ def clean_text(text):
 
 @app.route("/")
 def home():
-    return "Spam Model Running"
+    return "Spam Detection API Running"
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    try:
-        data = request.get_json(force=True)
-        email_text = data.get("emailText")
+    data = request.get_json(force=True)
 
-        if not email_text:
-            return jsonify({"prediction": "ERROR"})
+    email_text = data.get("emailText")
 
-        email_text = clean_text(email_text)
-        vector = vectorizer.transform([email_text])
-        prediction = model.predict(vector)[0]
-
-        result = "SPAM" if prediction == 1 else "HAM"
-
-        return jsonify({"prediction": result})
-
-    except Exception:
+    if not email_text:
         return jsonify({"prediction": "ERROR"})
+
+    email_text = clean_text(email_text)
+    vector = vectorizer.transform([email_text])
+
+    prediction = model.predict(vector)[0]
+
+    result = "SPAM" if prediction == 1 else "HAM"
+
+    return jsonify({"prediction": result})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
