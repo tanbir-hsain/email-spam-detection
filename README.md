@@ -1,41 +1,111 @@
-# Email Spam Detection System
+# Email Threat Detection System
 
 ## Project Description
-This project is an Email Spam Detection System that classifies emails as **Spam** or **Ham (Not Spam)** using Machine Learning.
+Email Threat Detection System built using Spring Boot, Flask, REST APIs, and Machine Learning to classify emails as Spam or Ham (Not Spam). The project demonstrates backend development, API integration, and machine learning model deployment.
 
 ## Tech Stack
-- Java (Spring Boot) – Backend API
-- Python (Flask) – ML Model
-- REST API – Communication between backend and ML
-- Git & GitHub – Version Control
+- Java
+- Spring Boot
+- Python
+- Flask
+- Machine Learning
+- REST API
+- Git & GitHub
 
-## How it Works
-1. User sends email content
-2. Spring Boot receives request
-3. Backend calls Flask API
-4. ML model analyzes text
-5. Returns result: Spam / Not Spam
+## Architecture
+
+User
+↓
+Spring Boot Backend
+↓
+REST API Call
+↓
+Flask ML Service
+↓
+Spam Detection Model
+↓
+Prediction (SPAM / HAM)
+↓
+Response to User
 
 ## Features
-- Real-time spam detection
-- API-based architecture
-- Separation of backend and ML logic
+- Real-time email spam detection
+- REST API integration between Spring Boot and Flask
+- Machine Learning-based email classification
+- Backend development using Spring Boot
+- Clean separation of backend and ML services
+
+## How It Works
+1. User submits email content
+2. Spring Boot receives the request
+3. Backend sends email content to Flask API
+4. Machine Learning model analyzes the text
+5. Flask returns prediction (SPAM/HAM)
+6. Spring Boot returns the result to the user
 
 ## Setup Instructions
 
 ### Backend (Spring Boot)
-- Run the Spring Boot application
+1. Open the Spring Boot project
+2. Configure application properties if required
+3. Run the application
 
-### ML Model (Flask)
-- Run `app.py` using Python
+### ML Service (Flask)
+1. Install dependencies
 
-### API
-- Send POST request with email content
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the Flask application
+
+```bash
+python app.py
+```
+
+### API Endpoint
+
+```http
+POST /email/analyze
+```
+
+Example Request:
+
+```json
+{
+  "emailText": "Congratulations! You won a lottery."
+}
+```
+
+Example Response:
+
+```json
+{
+  "result": "SPAM",
+  "confidence": 1.0
+}
+```
+
+## Skills Demonstrated
+- Java Programming
+- Spring Boot
+- REST API Development
+- Python
+- Flask
+- Machine Learning Integration
+- Backend Development
+- Git & GitHub
 
 ## Future Improvements
-- Deploy on AWS
-- Improve ML accuracy
-- Add user interface
+- Deploy Spring Boot and Flask services on AWS EC2
+- Improve model accuracy using larger datasets
+- Add frontend user interface
+- Implement confidence score from ML model
 
 ## Author
-Tanbir Hussain
+
+**Tanbir Hussain**
+
+LinkedIn: linkedin.com/in/tanbir-hussain-76320b414
+
+GitHub: github.com/tanbir-hsain
