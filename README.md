@@ -1,8 +1,8 @@
-# Email Spam Detection System
+# Email Spam Extension
 
 ## Project Description
 
-Email Spam Detection System built using a Browser Extension, Spring Boot, Flask, REST APIs, and Machine Learning to classify Gmail emails as Spam or Ham.
+Email Spam Extension built using a Browser Extension, Spring Boot, Flask, REST APIs, and Machine Learning to classify Gmail emails as Spam or Ham.
 
 The Browser Extension automatically captures email content from Gmail and sends it to the Spring Boot backend. The backend communicates with a Flask-based Machine Learning API through REST APIs. The Machine Learning model analyzes the email and returns the prediction (SPAM or HAM), which is displayed inside the browser.
 
